@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-image: url('../img/bg-tablet-pattern.svg');
+  background-repeat: no-repeat;
+  background-size: 800px;
+  background-position: 90% -25%;
+}
+
+#cta {
+  background-image: url('../img/bg-simplify-section-desktop.svg');
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 576px) {
+  body {
+    background-position: 50px -50px;
+    background-size: 500px;
+  }
+
+  #cta {
+    background-image: url('../img/bg-simplify-section-mobile.svg');
+  }
+}
+
+/* Hamburger menu */ 
+.hamburger {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.hamburger .ham-top,
+.hamburger .ham-middle,
+.hamburger .ham-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background-color: black;
+  transform: rotate(0);
+  transition: all 0.2s;
+}
+
+.hamburger .ham-middle {
+  transform: translateY(7px);
+}
+.hamburger .ham-bottom {
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0px);
+}
+
+.open .ham-top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+.open .ham-middle {
+  display: none;
+}
+.open .ham-bottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
